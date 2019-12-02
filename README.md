@@ -54,22 +54,22 @@
 ## Screenshots:
 * My GitHub Repository
 
-![](images/img1.PNG)
+![](images/img1.png)
 
 * Python Programs
 
-![](images/img2.PNG)
+![](images/img2.png)
 
 * Javascript Programs
 
-![](images/img3.PNG)
+![](images/img3.png)
 
 * Data Visualization Program on StudentPerformance DataSet
 
-![](images/img4.PNG)
+![](images/img4.png)
 
 * Javascript Program using JSON Object and hover action
 
-![](images/img5.PNG)
+![](images/img5.png)
 
 
