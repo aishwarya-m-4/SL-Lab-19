@@ -1,0 +1,43 @@
+!DOCTYPE html>
+<html>
+<head>
+
+
+<title>Json3 Example</title>
+</head>
+<body>
+
+
+	<h1>Looping through arrays inside array</h1>
+
+	<ul class="wrapper"></ul>
+
+	
+	<script type="text/javascript">
+	
+		var obj = {
+			"name": "Aaron",
+			"age": "20",
+			"cars":[
+				{"name": "Ford",
+				"models": ["Fiesta", "Focus"]},
+				{"name": "BMW",
+				"models": ["X3", "X4"]},
+				{"name": "Maruti",	
+				"models": ["800", "swift"]}					
+								
+			]
+		}
+		var x;
+		for(var i in obj.cars){
+			x+="<li>"+obj.cars[i].name+"</li>";
+			for(var j in obj.cars[i].models){
+				x+= obj.cars[i].models[j]+"<br>";
+			}
+		}
+		document.querySelector(".wrapper").innerHTML = x;
+	</script>
+
+
+</body>
+</html>
