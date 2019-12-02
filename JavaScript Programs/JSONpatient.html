@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+	<title>Json4 Example</title>
+</head>
+
+
+<body>
+	<p>Looping through arrays inside arrays </p>
+	<ol id="demo"></ol>
+
+
+
+
+
+	<script>
+		var myObj, i, j, x = "";
+		myObj = [{
+			"docname": "John",
+			"patname": "Roshan",
+			"diseases": [
+				{ "name": "Dengue", "symptoms": ["Fever", "BodyAche", "Rashes"] },
+				{ "name": "Jaundice", "symptoms": ["Yellowness", "High Fever", "Loss of apitite"] },
+			]
+		},
+		{
+			"docname": "Sachin",
+			"patname": "Rosie",
+			"diseases": [
+				{ "name": "Migraine", "symptoms": ["Head ache", "ear pain"] },
+				{ "name": "Arthritis", "symptoms": ["Joint pain"] }
+			]
+		}];
+		for (k in myObj) {
+			x += "<li> Doctor's name: " + myObj[k].docname + "</li>";
+			x += "<p> Patient's name: " + myObj[k].patname + "</p>";
+			for (i in myObj[k].diseases) {
+				x += "<ul>disease: <b>" + myObj[k].diseases[i].name + "</b></li>"
+				for (j in myObj[k].diseases[i].symptoms) {
+					x += "<li>" + myObj[k].diseases[i].symptoms[j] + "</li><br>";
+				}
+				x += "</ul>";
+			}
+		}
+		document.getElementById("demo").innerHTML = x;
+	</script>
+</body>
+
+</html>
