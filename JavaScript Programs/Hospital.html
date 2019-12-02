@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        .wrapper {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 2px;
+        }
+        hr {
+            width: 70%;
+            margin: auto;
+        }
+        .details {
+            width: 70%;
+            margin-top: 10px;
+            margin: auto;
+            text-align: center;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+
+
+    <title>Patient Details</title>
+</head>
+
+<body onload="init()">
+
+
+    <div class="wrapper">
+        <div class="hosp">
+            <h1 id="hospName"></h1>
+            <h2 id="hospLocation"></h2>
+            <h2 id="hoverElement" onmouseover="dispPat()">PATIENT DETAILS</h2>
+        </div>
+        <hr>
+        <div class="pat">
+
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        //data
+        var patients = [{
+            "name": "Harish",
+            "AadharNumber": 12345678,
+            "labTests": ["blood test", "MRI"]
+        },
+        {
+            "name": "Lohit",
+            "AadharNumber": 87654321,
+            "labTests": ["blood test", "MRI", "skin-test"]
+        }]
+        var hospital = {
+            "name": "Manipal",
+            "location": "HAL old airport road"
+        }
+        //loading data when the page loads
+        function init() {
+            document.getElementById("hospName").innerText = hospital.name;
+            document.getElementById("hospLocation").innerText = hospital.location;
+        }
+        var flag = 0;
+        //displaying patient details on mouse hover
+        function dispPat() {
+            if (flag == 1) {
+                return;
+            }
+            document.getElementById("hoverElement").style.color = "red"
+            flag = 1;
+            var pat = document.querySelector(".pat");
+            for (var i = 0; i < patients.length; i++) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'details');
+                pat.appendChild(div);
+                var patName = document.createElement('h3');
+                patName.setAttribute('class', 'patName');
+                patName.textContent = "Name: " + patients[i].name;
+                div.appendChild(patName);
+                var aadhaar = document.createElement('h3');
+                aadhaar.setAttribute('class', 'aadhaar');
+                aadhaar.textContent = "Aadhaar number: " + patients[i].AadharNumber;
+                div.appendChild(aadhaar);
+                var ul = document.createElement('ul');
+                div.appendChild(ul);
+                for (var j = 0; j < patients[i].labTests.length; j++) {
+                    var li = document.createElement('li');
+                    li.textContent = patients[i].labTests[j];
+                    ul.appendChild(li);
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
