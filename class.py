@@ -3,14 +3,14 @@
 
 class Person:
 	def __init__ (self, name, age):
-		self.name=name;
-		self.age=age;
+		self.name=name
+		self.age=age
 		
 		
 	def __init__ (self, name, age,person):
-		self.name=name;
-		self.age=age;
-		self.person=person;
+		self.name=name
+		self.age=age
+		self.person=person
 		
 #Two objects are created. Init constructor is automatically called.
 p1 = Person("Suppandi", 15)
